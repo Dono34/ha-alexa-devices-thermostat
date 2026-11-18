@@ -163,7 +163,7 @@ class AmazonThermostatEntity(AmazonEntity, ClimateEntity):
 
     @property
     @override
-    def temperature_unit(self) -> str:
+    def native_temperature_unit(self) -> str:
         """Return the unit the thermostat works in."""
         if self._alexa_scale == "CELSIUS":
             return UnitOfTemperature.CELSIUS
@@ -173,13 +173,13 @@ class AmazonThermostatEntity(AmazonEntity, ClimateEntity):
     @override
     def min_temp(self) -> float:
         """Return the lowest set point allowed."""
-        return LIMITS[self.temperature_unit][0]
+        return LIMITS[self.native_temperature_unit][0]
 
     @property
     @override
     def max_temp(self) -> float:
         """Return the highest set point allowed."""
-        return LIMITS[self.temperature_unit][1]
+        return LIMITS[self.native_temperature_unit][1]
 
     @property
     @override
@@ -196,7 +196,7 @@ class AmazonThermostatEntity(AmazonEntity, ClimateEntity):
 
     @property
     @override
-    def current_temperature(self) -> float | None:
+    def native_current_temperature(self) -> float | None:
         """Return the room temperature."""
         value = self._value("temperatureSensor", "temperature")
         return float(value) if value is not None else None
@@ -211,7 +211,7 @@ class AmazonThermostatEntity(AmazonEntity, ClimateEntity):
 
     @property
     @override
-    def target_temperature(self) -> float | None:
+    def native_target_temperature(self) -> float | None:
         """Return the set point in heat or cool mode."""
         if (target := self._float("targetSetpoint")) is not None:
             return target
@@ -223,13 +223,13 @@ class AmazonThermostatEntity(AmazonEntity, ClimateEntity):
 
     @property
     @override
-    def target_temperature_low(self) -> float | None:
+    def native_target_temperature_low(self) -> float | None:
         """Return the heat-to set point."""
         return self._float("lowerSetpoint")
 
     @property
     @override
-    def target_temperature_high(self) -> float | None:
+    def native_target_temperature_high(self) -> float | None:
         """Return the cool-to set point."""
         return self._float("upperSetpoint")
 
@@ -272,9 +272,9 @@ class AmazonThermostatEntity(AmazonEntity, ClimateEntity):
                 instance=instance,
             )
 
-    def _setpoint(self, value: float) -> dict[str, str]:
-        """Return a set point in the form Amazon expects."""
-        return {"value": f"{round(float(value)):d}", "scale": self._alexa_scale}
+    def _setpoint(self, value: float) -> dict[str, Any]:
+        """Return a set point in the form Amazon expects (a number, not text)."""
+        return {"value": round(float(value)), "scale": self._alexa_scale}
 
     @override
     async def async_set_hvac_mode(self, hvac_mode: HVACMode) -> None:
@@ -306,8 +306,8 @@ class AmazonThermostatEntity(AmazonEntity, ClimateEntity):
         low = kwargs.get(ATTR_TARGET_TEMP_LOW)
         high = kwargs.get(ATTR_TARGET_TEMP_HIGH)
         if low is not None or high is not None:
-            low = low if low is not None else self.target_temperature_low
-            high = high if high is not None else self.target_temperature_high
+            low = low if low is not None else self.native_target_temperature_low
+            high = high if high is not None else self.native_target_temperature_high
             if low is None or high is None:
                 raise ServiceValidationError("Both set points are needed")
             await self._call(
