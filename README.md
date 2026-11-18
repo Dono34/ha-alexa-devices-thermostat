@@ -5,7 +5,7 @@ A modified copy of Home Assistant's built-in **Alexa Devices** integration that 
 Status: early work in progress (0.2.1).
 
 - Reads: room temperature, heat-to and cool-to set points, single set point, mode, fan mode, schedule on/off.
-- Controls: mode (heat, cool, heat/cool, off), set points, fan mode (on, auto, circulate). Set points, fan mode and switching between heat/cool and heat have been confirmed on a real Amazon Smart Thermostat; cool and off have not been tried.
+- Controls: mode (heat, cool, heat/cool, off), set points, fan mode (on, auto, circulate). All of these have been confirmed on a real Amazon Smart Thermostat (set points, fan mode, and every mode: heat/cool, heat, cool, off).
 
 ## What is in this repository
 
