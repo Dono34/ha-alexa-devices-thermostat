@@ -1,0 +1,54 @@
+# Copyright 2024 Simone Chemelli and contributors
+# SPDX-License-Identifier: Apache-2.0
+
+"""Exceptions module for Amazon devices."""
+
+from __future__ import annotations
+
+
+class AmazonError(Exception):
+    """Base class for aioamazondevices errors."""
+
+
+class CannotConnect(AmazonError):
+    """Exception raised when connection fails."""
+
+
+class CannotAuthenticate(AmazonError):
+    """Exception raised when authentication fails."""
+
+
+class CannotRestartDevice(AmazonError):
+    """Exception raised when device restart fails."""
+
+
+class CannotRetrieveData(AmazonError):
+    """Exception raised when data retrieval fails."""
+
+
+class NoOnlineDevicesError(AmazonError):
+    """Exception raised when no online devices are found."""
+
+
+class CannotRegisterDevice(AmazonError):
+    """Exception raised when device registration fails."""
+
+
+class WrongMethod(AmazonError):
+    """Exception raised when the wrong login method is used."""
+
+
+class UpdatedAVSSite(AmazonError):
+    """Exception raised when the AVS site is updated."""
+
+
+class AVSStreamEndedUnexpectedly(AmazonError):
+    """Exception raised when the AVS stream ends unexpectedly."""
+
+
+class MissingCountryError(AmazonError):
+    """Exception raised when countryOfResidence is not set."""
+
+
+class CannotSetFeature(AmazonError):
+    """Exception raised when setting an endpoint feature fails."""
