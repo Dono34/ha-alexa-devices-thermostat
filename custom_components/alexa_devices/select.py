@@ -4,7 +4,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Final, override
 
-from aioamazondevices.structures import AmazonDevice, AmazonDropInStatus
+from aioamazondevices_thermostat.structures import AmazonDevice, AmazonDropInStatus
 
 from homeassistant.components.select import SelectEntity, SelectEntityDescription
 from homeassistant.const import EntityCategory

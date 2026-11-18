@@ -7,12 +7,12 @@ from http import HTTPMethod
 
 from yarl import URL
 
-from aioamazondevices.const.devices import DEVICE_TYPE_AQM, SPEAKER_GROUP_FAMILY
-from aioamazondevices.const.http import COMM_SITE, REQUEST_AGENT, URI_COMM_PREFERENCES
-from aioamazondevices.exceptions import CannotRetrieveData
-from aioamazondevices.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
-from aioamazondevices.structures import AmazonDevice, AmazonDropInStatus
-from aioamazondevices.utils import _LOGGER
+from aioamazondevices_thermostat.const.devices import DEVICE_TYPE_AQM, SPEAKER_GROUP_FAMILY
+from aioamazondevices_thermostat.const.http import COMM_SITE, REQUEST_AGENT, URI_COMM_PREFERENCES
+from aioamazondevices_thermostat.exceptions import CannotRetrieveData
+from aioamazondevices_thermostat.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
+from aioamazondevices_thermostat.structures import AmazonDevice, AmazonDropInStatus
+from aioamazondevices_thermostat.utils import _LOGGER
 
 
 class AlexaCommunicationsHandler:

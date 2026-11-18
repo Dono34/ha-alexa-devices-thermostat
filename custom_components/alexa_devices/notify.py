@@ -4,9 +4,9 @@ from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from typing import Any, Final, override
 
-from aioamazondevices.api import AmazonEchoApi
-from aioamazondevices.const.devices import SPEAKER_GROUP_FAMILY
-from aioamazondevices.structures import AmazonDevice
+from aioamazondevices_thermostat.api import AmazonEchoApi
+from aioamazondevices_thermostat.const.devices import SPEAKER_GROUP_FAMILY
+from aioamazondevices_thermostat.structures import AmazonDevice
 
 from homeassistant.components.notify import (
     NotifyEntity,

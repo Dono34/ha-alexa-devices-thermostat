@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Final, override
 
-from aioamazondevices.const.schedules import (
+from aioamazondevices_thermostat.const.schedules import (
     NOTIFICATION_ALARM,
     NOTIFICATION_REMINDER,
     NOTIFICATION_TIMER,

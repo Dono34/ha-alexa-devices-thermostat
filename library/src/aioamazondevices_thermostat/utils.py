@@ -15,9 +15,9 @@ from typing import Any
 
 import orjson
 
-from aioamazondevices.const.http import ARRAY_WRAPPER
-from aioamazondevices.exceptions import CannotRetrieveData
-from aioamazondevices.structures import AmazonDevice
+from aioamazondevices_thermostat.const.http import ARRAY_WRAPPER
+from aioamazondevices_thermostat.exceptions import CannotRetrieveData
+from aioamazondevices_thermostat.structures import AmazonDevice
 
 _LOGGER = logging.getLogger(__package__)
 _MAX_JSON_PARSE_DEPTH = 10

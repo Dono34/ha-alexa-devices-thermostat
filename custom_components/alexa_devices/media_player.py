@@ -3,7 +3,7 @@
 from datetime import datetime
 from typing import Any, override
 
-from aioamazondevices.structures import (
+from aioamazondevices_thermostat.structures import (
     AmazonMediaControls,
     AmazonMediaState,
     AmazonVolumeState,

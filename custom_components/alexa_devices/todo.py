@@ -2,7 +2,7 @@
 
 from typing import TYPE_CHECKING, override
 
-from aioamazondevices.structures import (
+from aioamazondevices_thermostat.structures import (
     AmazonListInfo,
     AmazonListItemStatus,
     AmazonListType,

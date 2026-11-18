@@ -7,7 +7,7 @@ from __future__ import annotations
 
 
 class AmazonError(Exception):
-    """Base class for aioamazondevices errors."""
+    """Base class for aioamazondevices_thermostat errors."""
 
 
 class CannotConnect(AmazonError):

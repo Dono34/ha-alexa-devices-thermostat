@@ -1,6 +1,6 @@
 [project]
-name = "aioamazondevices"
-version = "17.2.7"
+name = "aioamazondevices-thermostat"
+version = "17.2.7.post2"
 requires-python = ">=3.13"
 description = "Python library to control Amazon devices"
 authors = [
@@ -49,7 +49,7 @@ version = "0.13.7" # renovate: depName=uv datasource=pypi
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]
-version_variables = ["src/aioamazondevices/__init__.py:__version__",]
+version_variables = ["src/aioamazondevices_thermostat/__init__.py:__version__",]
 
 # Extract version from [tool.uv-version], single source of truth.
 build_command = """

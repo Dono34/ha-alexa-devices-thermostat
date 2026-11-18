@@ -11,9 +11,9 @@ from dateutil.parser import parse
 from dateutil.rrule import rrulestr
 from yarl import URL
 
-from aioamazondevices.const.devices import DEVICE_TYPES_TO_IGNORE
-from aioamazondevices.const.http import REQUEST_AGENT, URI_NOTIFICATIONS
-from aioamazondevices.const.schedules import (
+from aioamazondevices_thermostat.const.devices import DEVICE_TYPES_TO_IGNORE
+from aioamazondevices_thermostat.const.http import REQUEST_AGENT, URI_NOTIFICATIONS
+from aioamazondevices_thermostat.const.schedules import (
     COUNTRY_GROUPS,
     NOTIFICATION_ALARM,
     NOTIFICATION_MUSIC_ALARM,
@@ -23,10 +23,10 @@ from aioamazondevices.const.schedules import (
     RECURRING_PATTERNS,
     WEEKEND_EXCEPTIONS,
 )
-from aioamazondevices.exceptions import CannotRetrieveData
-from aioamazondevices.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
-from aioamazondevices.structures import AmazonDevice, AmazonSchedule
-from aioamazondevices.utils import _LOGGER
+from aioamazondevices_thermostat.exceptions import CannotRetrieveData
+from aioamazondevices_thermostat.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
+from aioamazondevices_thermostat.structures import AmazonDevice, AmazonSchedule
+from aioamazondevices_thermostat.utils import _LOGGER
 
 
 class AmazonNotificationHandler:

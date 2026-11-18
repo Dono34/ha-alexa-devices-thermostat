@@ -1,7 +1,7 @@
 """Support for services."""
 
-from aioamazondevices.const.metadata import ALEXA_INFO_SKILLS
-from aioamazondevices.const.sounds import SOUNDS_LIST
+from aioamazondevices_thermostat.const.metadata import ALEXA_INFO_SKILLS
+from aioamazondevices_thermostat.const.sounds import SOUNDS_LIST
 import probatio
 
 from homeassistant.const import ATTR_DEVICE_ID

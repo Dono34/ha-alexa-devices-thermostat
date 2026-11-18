@@ -7,14 +7,14 @@ from http import HTTPMethod
 
 from yarl import URL
 
-from aioamazondevices.const.devices import (
+from aioamazondevices_thermostat.const.devices import (
     DEVICE_TYPE_SPEAKER_GROUP,
     DEVICE_TYPE_STEREO_PAIR,
     DEVICE_TYPES_TO_IGNORE,
 )
-from aioamazondevices.const.http import URI_DND_STATUS_ALL, URI_DND_STATUS_DEVICE
-from aioamazondevices.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
-from aioamazondevices.structures import AmazonDevice
+from aioamazondevices_thermostat.const.http import URI_DND_STATUS_ALL, URI_DND_STATUS_DEVICE
+from aioamazondevices_thermostat.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
+from aioamazondevices_thermostat.structures import AmazonDevice
 
 
 class AmazonDnDHandler:

@@ -5,7 +5,7 @@
 
 from dataclasses import dataclass
 
-from aioamazondevices.const.sensors import (
+from aioamazondevices_thermostat.const.sensors import (
     COMMON_SENSORS,
     SENSOR_TEMPLATES,
     SPECIFIC_SENSORS,

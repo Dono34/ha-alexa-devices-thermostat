@@ -12,7 +12,7 @@ from typing import Any
 
 from yarl import URL
 
-from aioamazondevices.const.http import (
+from aioamazondevices_thermostat.const.http import (
     ARRAY_WRAPPER,
     HTTP_CONTENT_TYPE_STREAM,
     URI_DEVICE_VOLUMES,
@@ -20,8 +20,8 @@ from aioamazondevices.const.http import (
     URI_MEDIA_STATE,
     URI_MUSIC_PROVIDERS,
 )
-from aioamazondevices.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
-from aioamazondevices.structures import (
+from aioamazondevices_thermostat.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
+from aioamazondevices_thermostat.structures import (
     AmazonDevice,
     AmazonMediaControls,
     AmazonMediaState,
@@ -29,7 +29,7 @@ from aioamazondevices.structures import (
     AmazonSequenceType,
     AmazonVolumeState,
 )
-from aioamazondevices.utils import _LOGGER
+from aioamazondevices_thermostat.utils import _LOGGER
 
 
 class AmazonMediaHandler:

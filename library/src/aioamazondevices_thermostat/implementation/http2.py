@@ -19,22 +19,22 @@ from h2.errors import ErrorCodes
 from h2.events import ConnectionTerminated
 from yarl import URL
 
-from aioamazondevices.const.http import (
+from aioamazondevices_thermostat.const.http import (
     HTTP2_DIRECTIVES_VERSION,
     HTTP2_RECONNECT_DELAY,
     HTTP2_SITE,
     REFRESH_ACCESS_TOKEN,
 )
-from aioamazondevices.exceptions import (
+from aioamazondevices_thermostat.exceptions import (
     AVSStreamEndedUnexpectedly,
     CannotAuthenticate,
     CannotConnect,
     CannotRetrieveData,
     UpdatedAVSSite,
 )
-from aioamazondevices.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
-from aioamazondevices.structures import AmazonPushMessage
-from aioamazondevices.utils import (
+from aioamazondevices_thermostat.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
+from aioamazondevices_thermostat.structures import AmazonPushMessage
+from aioamazondevices_thermostat.utils import (
     _LOGGER,
     get_deepest_cause,
     get_innermost_frame,
@@ -42,9 +42,9 @@ from aioamazondevices.utils import (
     http2_parse_boundary_delimiter,
 )
 
-_HTTP2_TASK_AVS_MAIN = "aioamazondevices-avs-main"
-_HTTP2_TASK_AVS_STREAM = "aioamazondevices-avs-stream"
-_HTTP2_TASK_AVS_PING = "aioamazondevices-avs-ping"
+_HTTP2_TASK_AVS_MAIN = "aioamazondevices_thermostat-avs-main"
+_HTTP2_TASK_AVS_STREAM = "aioamazondevices_thermostat-avs-stream"
+_HTTP2_TASK_AVS_PING = "aioamazondevices_thermostat-avs-ping"
 _MAX_BUFFER_SIZE = 512 * 1024  # 512 KB
 _PING_INTERVAL = 280
 # How long to wait for the stream to open before the ping loop retries.

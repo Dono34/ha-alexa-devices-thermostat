@@ -1,4 +1,4 @@
 # Copyright 2024 Simone Chemelli and contributors
 # SPDX-License-Identifier: Apache-2.0
 
-"""aioamazondevices const package."""
+"""aioamazondevices_thermostat const package."""

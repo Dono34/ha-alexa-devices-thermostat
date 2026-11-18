@@ -13,21 +13,21 @@ from typing import Any
 import orjson
 from yarl import URL
 
-from aioamazondevices.const.http import (
+from aioamazondevices_thermostat.const.http import (
     ARRAY_WRAPPER,
     HTTP_CONTENT_TYPE_STREAM,
     URI_BEHAVIORS_AUTOMATIONS,
     URI_BEHAVIORS_PREVIEW,
 )
-from aioamazondevices.const.metadata import ALEXA_INFO_SKILLS, SEQUENCE_BATCH_DELAY
-from aioamazondevices.exceptions import CannotConnect
-from aioamazondevices.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
-from aioamazondevices.structures import (
+from aioamazondevices_thermostat.const.metadata import ALEXA_INFO_SKILLS, SEQUENCE_BATCH_DELAY
+from aioamazondevices_thermostat.exceptions import CannotConnect
+from aioamazondevices_thermostat.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
+from aioamazondevices_thermostat.structures import (
     AmazonDevice,
     AmazonSequenceNode,
     AmazonSequenceType,
 )
-from aioamazondevices.utils import _LOGGER, replace_routine_placeholders
+from aioamazondevices_thermostat.utils import _LOGGER, replace_routine_placeholders
 
 
 class AmazonSequenceHandler:

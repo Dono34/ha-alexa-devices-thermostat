@@ -7,15 +7,15 @@ from datetime import timedelta
 from pathlib import Path
 from typing import override
 
-from aioamazondevices.api import AmazonEchoApi
-from aioamazondevices.exceptions import (
+from aioamazondevices_thermostat.api import AmazonEchoApi
+from aioamazondevices_thermostat.exceptions import (
     CannotAuthenticate,
     CannotConnect,
     CannotRetrieveData,
     CannotSetFeature,
     NoOnlineDevicesError,
 )
-from aioamazondevices.structures import (
+from aioamazondevices_thermostat.structures import (
     AmazonDevice,
     AmazonDeviceSensor,
     AmazonListEvent,

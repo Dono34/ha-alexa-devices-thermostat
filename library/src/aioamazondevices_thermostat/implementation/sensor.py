@@ -11,20 +11,20 @@ from typing import Any
 
 from yarl import URL
 
-from aioamazondevices.const.devices import SPEAKER_GROUP_FAMILY
-from aioamazondevices.const.http import REQUEST_AGENT, URI_NEXUS_GRAPHQL
-from aioamazondevices.const.queries import QUERY_POLLED_SENSOR_STATE
-from aioamazondevices.const.sensors import (
+from aioamazondevices_thermostat.const.devices import SPEAKER_GROUP_FAMILY
+from aioamazondevices_thermostat.const.http import REQUEST_AGENT, URI_NEXUS_GRAPHQL
+from aioamazondevices_thermostat.const.queries import QUERY_POLLED_SENSOR_STATE
+from aioamazondevices_thermostat.const.sensors import (
     POLLED_SENSOR_FEATURES,
     TEMPERATURE_CALIBRATION_VALUE,
 )
-from aioamazondevices.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
-from aioamazondevices.implementation.feature_property_definitions import (
+from aioamazondevices_thermostat.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
+from aioamazondevices_thermostat.implementation.feature_property_definitions import (
     FeaturePropertyDefinition,
     resolve_feature_property_definition,
 )
-from aioamazondevices.structures import AmazonDevice, AmazonDeviceSensor
-from aioamazondevices.utils import (
+from aioamazondevices_thermostat.structures import AmazonDevice, AmazonDeviceSensor
+from aioamazondevices_thermostat.utils import (
     _LOGGER,
     check_and_log_graphql_errors,
     validate_graphql_endpoint_shape,

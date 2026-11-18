@@ -9,9 +9,9 @@ from typing import Any
 from aiohttp import ClientResponse
 from yarl import URL
 
-from aioamazondevices.const.http import URI_TODO_BASE
-from aioamazondevices.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
-from aioamazondevices.structures import (
+from aioamazondevices_thermostat.const.http import URI_TODO_BASE
+from aioamazondevices_thermostat.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
+from aioamazondevices_thermostat.structures import (
     AmazonListInfo,
     AmazonListItem,
     AmazonListItemStatus,

@@ -4,8 +4,8 @@ from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from typing import Any, Final, override
 
-from aioamazondevices.const.devices import SPEAKER_GROUP_FAMILY
-from aioamazondevices.structures import AmazonDevice
+from aioamazondevices_thermostat.const.devices import SPEAKER_GROUP_FAMILY
+from aioamazondevices_thermostat.structures import AmazonDevice
 
 from homeassistant.components.switch import (
     DOMAIN as SWITCH_DOMAIN,

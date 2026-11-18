@@ -3,7 +3,7 @@
 from dataclasses import asdict
 from typing import TYPE_CHECKING, Any
 
-from aioamazondevices.structures import AmazonDevice
+from aioamazondevices_thermostat.structures import AmazonDevice
 
 from homeassistant.components.diagnostics import async_redact_data
 from homeassistant.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME

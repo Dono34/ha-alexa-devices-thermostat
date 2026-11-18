@@ -5,13 +5,13 @@ from collections.abc import Mapping
 from pathlib import Path
 from typing import Any, override
 
-from aioamazondevices.api import AmazonEchoApi
-from aioamazondevices.exceptions import (
+from aioamazondevices_thermostat.api import AmazonEchoApi
+from aioamazondevices_thermostat.exceptions import (
     CannotAuthenticate,
     CannotConnect,
     CannotRetrieveData,
 )
-from aioamazondevices.structures import AmazonSaveDataConfig
+from aioamazondevices_thermostat.structures import AmazonSaveDataConfig
 import probatio
 
 from homeassistant.config_entries import ConfigFlow, ConfigFlowResult

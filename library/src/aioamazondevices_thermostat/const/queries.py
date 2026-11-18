@@ -311,6 +311,24 @@ fragment EndpointState on Endpoint {
         detectionStateValue
         timeOfSample
       }
+      ... on Setpoint {
+        name
+        error { type message }
+        value { value scale }
+        timeOfSample
+      }
+      ... on ThermostatMode {
+        name
+        error { type message }
+        thermostatModeValue
+        timeOfSample
+      }
+      ... on ThermostatScheduleScheduleEnabled {
+        name
+        error { type message }
+        thermostatScheduleScheduleEnabledValue { value }
+        timeOfSample
+      }
     }
   }
 }

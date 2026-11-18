@@ -16,11 +16,11 @@
   "integration_type": "hub",
   "iot_class": "cloud_polling",
   "loggers": [
-    "aioamazondevices"
+    "aioamazondevices_thermostat"
   ],
   "requirements": [
-    "aioamazondevices @ git+https://github.com/Dono34/ha-alexa-devices-thermostat@main#subdirectory=library"
+    "aioamazondevices-thermostat @ https://github.com/Dono34/ha-alexa-devices-thermostat/archive/refs/tags/v0.2.0.zip#subdirectory=library"
   ],
-  "version": "0.1.0",
+  "version": "0.2.0",
   "issue_tracker": "https://github.com/Dono34/ha-alexa-devices-thermostat/issues"
 }

@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 from typing import Final, override
 
-from aioamazondevices.const.sensors import SENSOR_STATE_OFF
+from aioamazondevices_thermostat.const.sensors import SENSOR_STATE_OFF
 
 from homeassistant.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,

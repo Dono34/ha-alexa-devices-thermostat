@@ -5,7 +5,11 @@
 
 from typing import NotRequired, TypedDict
 
-from aioamazondevices.const.devices import DEVICE_TYPE_AQM, DEVICE_TYPE_GLOW
+from aioamazondevices_thermostat.const.devices import (
+    DEVICE_TYPE_AQM,
+    DEVICE_TYPE_GLOW,
+    DEVICE_TYPE_THERMOSTAT,
+)
 
 SENSOR_STATE_OFF = "NOT_DETECTED"
 
@@ -84,6 +88,32 @@ SENSOR_TEMPLATES: dict[str, dict[str, SensorTemplate]] = {
             "value_key": "toggleStateValue",
         },
     },
+    "thermostat": {
+        "lowerSetpoint": {
+                "value_key": "value",
+                "value_subkey": "value",
+                "value_scale_key": "scale",
+            },
+        "upperSetpoint": {
+                "value_key": "value",
+                "value_subkey": "value",
+                "value_scale_key": "scale",
+            },
+        "targetSetpoint": {
+                "value_key": "value",
+                "value_subkey": "value",
+                "value_scale_key": "scale",
+            },
+        "thermostatMode": {
+            "value_key": "thermostatModeValue",
+        },
+    },
+    "thermostatSchedule": {
+        "scheduleEnabled": {
+            "value_key": "thermostatScheduleScheduleEnabledValue",
+            "value_subkey": "value",
+        },
+    },
 }
 
 # These templates will be applied to all devices
@@ -92,6 +122,9 @@ COMMON_SENSORS: list[str] = [
     "motionSensor",
     "lightSensor",
     "connectivity",
+    # only thermostats have these, whatever their maker
+    "thermostat",
+    "thermostatSchedule",
 ]
 
 # Features Amazon does not push over HTTP2, so they need polling
@@ -100,6 +133,8 @@ POLLED_SENSOR_FEATURES: frozenset[str] = frozenset(
         "connectivity",
         "lightSensor",
         "motionSensor",
+        "thermostat",
+        "thermostatSchedule",
     }
 )
 
@@ -121,6 +156,24 @@ class SpecificSensor(TypedDict):
 
 # Device type specific sensors, keyed by device type, feature name and then instance
 SPECIFIC_SENSORS: dict[str, dict[str, dict[str, SpecificSensor]]] = {
+    DEVICE_TYPE_THERMOSTAT: {
+        "mode": {
+            "5": {
+                "sensor_key_override": "fan_mode",
+                "scale": None,
+            },
+        },
+        "range": {
+            "1": {
+                "sensor_key_override": "active_brightness",
+                "scale": None,
+            },
+            "2": {
+                "sensor_key_override": "inactive_brightness",
+                "scale": None,
+            },
+        },
+    },
     DEVICE_TYPE_AQM: {
         "range": {
             "4": {

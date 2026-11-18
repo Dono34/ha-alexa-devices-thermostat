@@ -3,7 +3,7 @@
 from collections.abc import Callable
 from typing import override
 
-from aioamazondevices.structures import AmazonDevice
+from aioamazondevices_thermostat.structures import AmazonDevice
 
 from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
 from homeassistant.helpers.entity import EntityDescription

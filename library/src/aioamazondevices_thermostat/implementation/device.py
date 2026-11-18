@@ -9,28 +9,29 @@ from typing import Any
 
 from yarl import URL
 
-from aioamazondevices.const.devices import (
+from aioamazondevices_thermostat.const.devices import (
+    DEVICE_TYPE_THERMOSTAT,
     DEVICE_TYPE_AQM,
     DEVICE_TYPE_GLOW,
     DEVICE_TYPES_HARDCODED_METADATA,
     DEVICE_TYPES_TO_IGNORE,
     SPEAKER_GROUP_FAMILY,
 )
-from aioamazondevices.const.http import (
+from aioamazondevices_thermostat.const.http import (
     REFRESH_ACCESS_TOKEN,
     REQUEST_AGENT,
     URI_DEVICES,
     URI_NEXUS_GRAPHQL,
     URI_REBOOT,
 )
-from aioamazondevices.const.queries import QUERY_DEVICE_DATA, QUERY_DEVICE_FEATURES
-from aioamazondevices.exceptions import CannotRestartDevice, CannotRetrieveData
-from aioamazondevices.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
-from aioamazondevices.implementation.feature_property_definitions import (
+from aioamazondevices_thermostat.const.queries import QUERY_DEVICE_DATA, QUERY_DEVICE_FEATURES
+from aioamazondevices_thermostat.exceptions import CannotRestartDevice, CannotRetrieveData
+from aioamazondevices_thermostat.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
+from aioamazondevices_thermostat.implementation.feature_property_definitions import (
     resolve_feature_property_definition,
 )
-from aioamazondevices.structures import AmazonDevice, AmazonDeviceFeature
-from aioamazondevices.utils import (
+from aioamazondevices_thermostat.structures import AmazonDevice, AmazonDeviceFeature
+from aioamazondevices_thermostat.utils import (
     _LOGGER,
     check_and_log_graphql_errors,
     parse_device_details,
@@ -169,7 +170,7 @@ def _resolve_model_details(
 
     if not device_model:
         _LOGGER.warning(
-            "Unknown device type '%s' for %s: please read https://github.com/chemelli74/aioamazondevices/wiki/Unknown-Device-Types",
+            "Unknown device type '%s' for %s: please read https://github.com/chemelli74/aioamazondevices_thermostat/wiki/Unknown-Device-Types",
             device_type,
             account_name,
         )
@@ -234,7 +235,10 @@ class AmazonDeviceHandler:
                 selected_devices[serial_number] = (endpoint, base_device)
             elif _endpoint_device_type(endpoint) in (DEVICE_TYPE_AQM, DEVICE_TYPE_GLOW):
                 selected_devices[serial_number] = (endpoint, None)
-            elif _endpoint_primary_display_category(endpoint) == "THERMOSTAT":
+            elif (
+                _endpoint_device_type(endpoint) == DEVICE_TYPE_THERMOSTAT
+                or _endpoint_primary_display_category(endpoint) == "THERMOSTAT"
+            ):
                 # Amazon Smart Thermostat: has no devices-v2 data, built from
                 # its endpoint alone
                 selected_devices[serial_number] = (endpoint, None)

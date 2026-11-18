@@ -14,12 +14,12 @@ from aiohttp import ClientSession
 from aiosignal import Signal
 from anyio import Path
 
-from aioamazondevices.implementation.communication import AlexaCommunicationsHandler
-from aioamazondevices.implementation.device import AmazonDeviceHandler
-from aioamazondevices.implementation.feature import AmazonFeatureHandler
-from aioamazondevices.implementation.media import AmazonMediaHandler
-from aioamazondevices.implementation.sensor import AmazonSensorHandler
-from aioamazondevices.implementation.todo import AmazonToDoHandler
+from aioamazondevices_thermostat.implementation.communication import AlexaCommunicationsHandler
+from aioamazondevices_thermostat.implementation.device import AmazonDeviceHandler
+from aioamazondevices_thermostat.implementation.feature import AmazonFeatureHandler
+from aioamazondevices_thermostat.implementation.media import AmazonMediaHandler
+from aioamazondevices_thermostat.implementation.sensor import AmazonSensorHandler
+from aioamazondevices_thermostat.implementation.todo import AmazonToDoHandler
 
 from . import __version__
 from .const.http import (

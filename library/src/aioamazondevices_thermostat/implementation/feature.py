@@ -8,11 +8,11 @@ from typing import Any
 
 from yarl import URL
 
-from aioamazondevices.const.http import ARRAY_WRAPPER, REQUEST_AGENT, URI_NEXUS_GRAPHQL
-from aioamazondevices.const.queries import MUTATION_SET_ENDPOINT_FEATURES
-from aioamazondevices.exceptions import CannotSetFeature
-from aioamazondevices.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
-from aioamazondevices.utils import _LOGGER, check_and_log_graphql_errors
+from aioamazondevices_thermostat.const.http import ARRAY_WRAPPER, REQUEST_AGENT, URI_NEXUS_GRAPHQL
+from aioamazondevices_thermostat.const.queries import MUTATION_SET_ENDPOINT_FEATURES
+from aioamazondevices_thermostat.exceptions import CannotSetFeature
+from aioamazondevices_thermostat.http_wrapper import AmazonHttpWrapper, AmazonSessionStateData
+from aioamazondevices_thermostat.utils import _LOGGER, check_and_log_graphql_errors
 
 OPERATION_NAME = "setEndpointFeatures"
 

@@ -1,7 +1,7 @@
 # Copyright 2024 Simone Chemelli and contributors
 # SPDX-License-Identifier: Apache-2.0
 
-"""aioamazondevices library."""
+"""aioamazondevices_thermostat library."""
 
 __version__ = "17.2.7"
 

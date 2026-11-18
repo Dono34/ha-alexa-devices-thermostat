@@ -2,12 +2,12 @@
 
 from collections.abc import Callable
 
-from aioamazondevices.const.schedules import (
+from aioamazondevices_thermostat.const.schedules import (
     NOTIFICATION_ALARM,
     NOTIFICATION_REMINDER,
     NOTIFICATION_TIMER,
 )
-from aioamazondevices.structures import AmazonDevice
+from aioamazondevices_thermostat.structures import AmazonDevice
 
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
